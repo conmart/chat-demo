@@ -15,12 +15,11 @@ class ChatBox extends Component {
     this.state = {
       messages: []
     }
-    this.newMessageSent.bind(this)
+    this.newMessageSent = this.newMessageSent.bind(this)
   }
 
   componentDidMount() {
     this.cycleDemo();
-    this.addReceivedMessage();
   }
 
   addStockMessages() {
@@ -48,18 +47,11 @@ class ChatBox extends Component {
     event.preventDefault();
     const receivedText = event.target[0].value;
     const receivedMessage = { type: 'practice', text: receivedText }
-    console.log(receivedMessage)
-    console.log(this.addReceivedMessage)
-    this.addReceivedMessage(receivedMessage)
-  }
-
-  addReceivedMessage(receivedMessage) {
-    console.log(this.state.messages)
-    // const newMessages = this.state.messages
-    // newMessages.push(receivedMessage)
-    // this.setState({
-    //   messages: newMessages
-    // })
+    const newMessages = this.state.messages
+    newMessages.push(receivedMessage)
+    this.setState({
+      messages: newMessages
+    })
   }
 
   render() {
