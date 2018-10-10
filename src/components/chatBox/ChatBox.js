@@ -7,10 +7,10 @@ class ChatBox extends Component {
   constructor(props) {
     super(props)
     this.stockMessages = [
-      {type: 1, text: 'Hi, Cody. This is Dr. Smith reminding you of your appointment today at 3:45pm. See you in a few!'},
-      {type: 2, text: 'Running late! Traffic is crazy!'},
-      {type: 2, text: 'I should be able to make it to the office by 4pm :/'},
-      {type: 1, text: 'No problem. Your chair will be waiting :)'}
+      {type: 'practice', text: 'Hi, Cody. This is Dr. Smith reminding you of your appointment today at 3:45pm. See you in a few!'},
+      {type: 'patient', text: 'Running late! Traffic is crazy!'},
+      {type: 'patient', text: 'I should be able to make it to the office by 4pm :/'},
+      {type: 'practice', text: 'No problem. Your chair will be waiting :)'}
     ]
     this.state = {
       messages: []
@@ -20,6 +20,7 @@ class ChatBox extends Component {
 
   componentDidMount() {
     this.cycleDemo();
+    this.addReceivedMessage();
   }
 
   addStockMessages() {
@@ -30,7 +31,7 @@ class ChatBox extends Component {
         this.setState({
           messages: newMessages
         })
-      }, i*1000)
+      }, i*1)
     }
   }
 
@@ -40,12 +41,25 @@ class ChatBox extends Component {
       this.setState({
         messages: []
       }, this.addStockMessages())
-    }, 30000)
+    }, 3000000)
   }
 
   newMessageSent(event) {
-    console.log(event)
     event.preventDefault();
+    const receivedText = event.target[0].value;
+    const receivedMessage = { type: 'practice', text: receivedText }
+    console.log(receivedMessage)
+    console.log(this.addReceivedMessage)
+    this.addReceivedMessage(receivedMessage)
+  }
+
+  addReceivedMessage(receivedMessage) {
+    console.log(this.state.messages)
+    // const newMessages = this.state.messages
+    // newMessages.push(receivedMessage)
+    // this.setState({
+    //   messages: newMessages
+    // })
   }
 
   render() {
