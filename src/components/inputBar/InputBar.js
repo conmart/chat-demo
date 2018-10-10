@@ -1,10 +1,10 @@
 import React from 'react';
 
-const InputBar = ({newMessageSent}) => {
+const InputBar = ({newMessageSent, inputUpdated, value}) => {
   return (
     <div>
       <form onSubmit={newMessageSent}>
-        <input placeholder='Enter your message' name='check'></input>
+        <input placeholder='Enter your message' name='check' onChange={inputUpdated} value={value}></input>
         <input type='submit' value='Send' />
       </form>
     </div>

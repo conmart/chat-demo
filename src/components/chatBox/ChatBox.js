@@ -13,9 +13,11 @@ class ChatBox extends Component {
       {type: 'practice', text: 'No problem. Your chair will be waiting :)'}
     ]
     this.state = {
-      messages: []
+      messages: [],
+      input: ''
     }
     this.newMessageSent = this.newMessageSent.bind(this)
+    this.inputUpdated = this.inputUpdated.bind(this)
   }
 
   componentDidMount() {
@@ -43,14 +45,21 @@ class ChatBox extends Component {
     }, 3000000)
   }
 
+  inputUpdated(event) {
+    console.log(event.target.value)
+    this.setState({
+      input: event.target.value
+    })
+  }
+
   newMessageSent(event) {
     event.preventDefault();
-    const receivedText = event.target[0].value;
-    const receivedMessage = { type: 'practice', text: receivedText }
+    const receivedMessage = { type: 'practice', text: this.state.input }
     const newMessages = this.state.messages
     newMessages.push(receivedMessage)
     this.setState({
-      messages: newMessages
+      messages: newMessages,
+      input: ''
     })
   }
 
@@ -60,7 +69,11 @@ class ChatBox extends Component {
         <ChatWindow
           messages={ this.state.messages }
         />
-        <InputBar newMessageSent={this.newMessageSent}/>
+        <InputBar
+          value={this.state.input}
+          inputUpdated={this.inputUpdated}
+          newMessageSent={this.newMessageSent}
+        />
       </div>
     );
   }
