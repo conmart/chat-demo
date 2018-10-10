@@ -46,7 +46,6 @@ class ChatBox extends Component {
   }
 
   inputUpdated(event) {
-    console.log(event.target.value)
     this.setState({
       input: event.target.value
     })
