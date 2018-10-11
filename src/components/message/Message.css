@@ -1,0 +1,35 @@
+.practiceContainer{
+  display: block;
+  margin: .25rem;
+  text-align: right;
+}
+.practiceMessage {
+  color: black;
+  background: #44bbff;
+  display: inline-block;
+  padding: .75rem;
+  border-radius: 23px;
+  margin: 0;
+  text-align: right;
+  max-width: 415px;
+}
+
+.patientContainer{
+  display: block;
+  margin: .25rem;
+  text-align: left;
+}
+.patientMessage {
+  color: black;
+  background: #dee1e2;
+  display: inline-block;
+  padding: .75rem;
+  border-radius: 23px;
+  margin: 0;
+  text-align: left;
+  max-width: 415px;
+}
+
+.test {
+  font-size: 24px;
+}

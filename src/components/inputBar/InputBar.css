@@ -1,0 +1,22 @@
+.container {
+  text-align: center;
+  max-width: 600px;
+}
+
+.input {
+  font-size: 18px;
+  padding: .5rem .75rem;
+  margin: .5rem auto;
+  border-radius: 3px;
+  border: 1px solid #9b9b9b;
+  width: 350px;
+}
+
+.submit {
+  margin-left: 1rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 30px;
+  background: #323463;
+  color: white;
+}
