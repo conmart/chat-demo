@@ -1,8 +1,9 @@
 import React from 'react';
 import Message from '../message/Message';
+import styles from './ChatWindow.css';
 
 const ChatWindow = ({messages}) =>
-    <div>
+    <div className={styles.chatWindow}>
       {messages.map((message, index) => {
         return (
           <Message

@@ -11,6 +11,7 @@
   border-radius: 23px;
   margin: 0;
   text-align: right;
+  max-width: 415px;
 }
 
 .patientContainer{
@@ -26,6 +27,7 @@
   border-radius: 23px;
   margin: 0;
   text-align: left;
+  max-width: 415px;
 }
 
 .test {

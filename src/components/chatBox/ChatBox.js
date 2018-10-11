@@ -32,7 +32,7 @@ class ChatBox extends Component {
         this.setState({
           messages: newMessages
         })
-      }, i*1)
+      }, i*1000)
     }
   }
 
@@ -42,7 +42,7 @@ class ChatBox extends Component {
       this.setState({
         messages: []
       }, this.addStockMessages())
-    }, 3000000)
+    }, 30000)
   }
 
   inputUpdated(event) {
