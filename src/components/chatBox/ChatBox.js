@@ -53,13 +53,15 @@ class ChatBox extends Component {
 
   newMessageSent(event) {
     event.preventDefault();
-    const receivedMessage = { type: 'practice', text: this.state.input }
-    const newMessages = this.state.messages
-    newMessages.push(receivedMessage)
-    this.setState({
-      messages: newMessages,
-      input: ''
-    })
+    if (this.state.input) {
+      const receivedMessage = { type: 'practice', text: this.state.input }
+      const newMessages = this.state.messages
+      newMessages.push(receivedMessage)
+      this.setState({
+        messages: newMessages,
+        input: ''
+      })
+    }
   }
 
   render() {
