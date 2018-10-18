@@ -12,6 +12,8 @@ class ChatBox extends Component {
       {type: 'patient', text: 'I should be able to make it to the office by 4pm :/'},
       {type: 'practice', text: 'No problem. Your chair will be waiting :)'}
     ]
+    this.loopInterval = 15000
+    this.messageInterval = (this.loopInterval / 2) / (this.stockMessages.length + 1)
     this.state = {
       messages: [],
       input: ''
@@ -21,28 +23,27 @@ class ChatBox extends Component {
   }
 
   componentDidMount() {
+    this.addStockMessages()
     this.cycleDemo();
   }
 
   addStockMessages() {
     for (let i=1; i<=this.stockMessages.length; i++) {
       setTimeout(() => {
-        const newMessages = this.state.messages
-        newMessages.push(this.stockMessages[i-1])
+        const messages = [...this.state.messages, this.stockMessages[i-1]]
         this.setState({
-          messages: newMessages
+          messages
         })
-      }, i*1000)
+      }, i * this.messageInterval)
     }
   }
 
   cycleDemo() {
-    this.addStockMessages()
     setInterval(() => {
       this.setState({
         messages: []
       }, this.addStockMessages())
-    }, 30000)
+    }, this.loopInterval)
   }
 
   inputUpdated(event) {
@@ -55,10 +56,9 @@ class ChatBox extends Component {
     event.preventDefault();
     if (this.state.input) {
       const receivedMessage = { type: 'practice', text: this.state.input }
-      const newMessages = this.state.messages
-      newMessages.push(receivedMessage)
+      const messages = [...this.state.messages, receivedMessage]
       this.setState({
-        messages: newMessages,
+        messages,
         input: ''
       })
     }
