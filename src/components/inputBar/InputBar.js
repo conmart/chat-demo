@@ -4,9 +4,11 @@ import styles from './InputBar.css';
 const InputBar = ({newMessageSent, inputUpdated, value}) => {
   return (
     <div className={styles.container}>
-      <form onSubmit={newMessageSent}>
+      <form className={styles.form} onSubmit={newMessageSent}>
         <input className={styles.input} placeholder='Start typing...' name='check' onChange={inputUpdated} value={value}></input>
-        <input className={styles.submit} type='submit' value='Send' />
+        <button className={styles.submitBtn} type='submit'>
+          <img className={styles.sendIcon} src="../../../static/images/paper-plane-white.png" width="40" />
+        </button>
       </form>
     </div>
   )
