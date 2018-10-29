@@ -6,7 +6,7 @@
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-transition-group": "^2.5.0"
+    "react-transition-group": "^1.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",

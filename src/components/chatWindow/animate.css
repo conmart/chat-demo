@@ -1,4 +1,4 @@
-:global .example-enter {
+/*:global .example-enter {
   opacity: 0.01;
 }
 
@@ -14,4 +14,23 @@
 :global .example-leave.example-leave-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
+}*/
+
+:global .example-enter {
+  opacity: 0.01;
+  transform: translate(2%, 50%);
+}
+:global .example-enter-active {
+  opacity: 1;
+  transform: translate(2%, 0%);
+  transition: all 300ms ease-out;
+}
+:global .example-exit {
+  opacity: 1;
+  transform: translate(2%, 0%);
+}
+:global .example-exit-active {
+  opacity: 0.01;
+  transform: translate(2%, 50%);
+  transition: all 300ms ease-out;
 }

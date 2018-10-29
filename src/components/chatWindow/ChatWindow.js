@@ -1,28 +1,27 @@
 import React from 'react';
 import Message from '../message/Message';
 import styles from './ChatWindow.css';
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransitionGroup } from 'react-transition-group'
+import './animate.css'
 
 const ChatWindow = ({messages}) => {
-  let convo = messages.map((message, index) =>
-    <Message
-      message={ message }
-      key={ index } />)
-
-  let createMessage = messages.length
+  let convo = messages.map((message, index) => {
+    return (
+      <Message
+        message={ message }
+        key={ index } />
+    )
+  })
 
   return (
     <div className={styles.chatWindow}>
-      <CSSTransition
-        in={createMessage == true}
-        timeout={3000}
-        classNames='message'
-        unmountOnExit
-      >
-        <Message
-          message={messages[0]}
-        />
-      </CSSTransition>
+      <CSSTransitionGroup
+        transitionName="example"
+        timeout={{ enter: 500, exit: 700 }}
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}>
+        {convo}
+      </CSSTransitionGroup>
     </div>
   )
 }
