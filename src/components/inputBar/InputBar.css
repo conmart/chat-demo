@@ -3,6 +3,10 @@
   max-width: 600px;
 }
 
+.form {
+  display: flex
+}
+
 .input {
   font-size: 18px;
   padding: .5rem .75rem;
@@ -19,4 +23,14 @@
   border-radius: 30px;
   background: #323463;
   color: white;
+}
+
+.submitBtn {
+  background: #323463;
+  border-radius: 45px;
+  height: 60px;
+}
+
+.sendIcon {
+  padding: 5px 5px 0 0;
 }
