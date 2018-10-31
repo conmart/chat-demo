@@ -16,7 +16,7 @@ const ChatWindow = ({messages}) => {
   return (
     <div className={styles.chatWindow}>
       <CSSTransitionGroup
-        transitionName="example"
+        transitionName="message"
         timeout={{ enter: 500, exit: 700 }}
         transitionEnterTimeout={500}
         transitionLeaveTimeout={300}>

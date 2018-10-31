@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ChatWindow from '../chatWindow/ChatWindow';
 import InputBar from '../inputBar/InputBar';
+import styles from './Chatbox.css'
 
 class ChatBox extends Component {
 
@@ -66,7 +67,7 @@ class ChatBox extends Component {
 
   render() {
     return (
-      <div className="ChatBox">
+      <div className={styles.chatBox}>
         <ChatWindow
           messages={ this.state.messages }
         />

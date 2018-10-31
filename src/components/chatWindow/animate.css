@@ -1,36 +1,18 @@
-/*:global .example-enter {
+:global .message-enter {
   opacity: 0.01;
+  transform: translate(0%, 150%);
+}
+:global .message-enter-active {
+  opacity: 1;
+  transform: translate(0%, 0%);
+  transition: all 500ms ease;
 }
 
-:global .example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-:global .example-leave {
+:global .message-leave {
   opacity: 1;
 }
 
-:global .example-leave.example-leave-active {
+:global .message-leave.message-leave-active {
   opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}*/
-
-:global .example-enter {
-  opacity: 0.01;
-  transform: translate(2%, 50%);
-}
-:global .example-enter-active {
-  opacity: 1;
-  transform: translate(2%, 0%);
-  transition: all 300ms ease-out;
-}
-:global .example-exit {
-  opacity: 1;
-  transform: translate(2%, 0%);
-}
-:global .example-exit-active {
-  opacity: 0.01;
-  transform: translate(2%, 50%);
-  transition: all 300ms ease-out;
+  transition: opacity 400ms ease-in;
 }
