@@ -5,18 +5,20 @@ import styles from './Message.css'
 const Message = ({message}) => {
 
   return (
-    <div className={
-      message.type ==='practice' ?
-      styles.practiceContainer :
-      styles.patientContainer
-    }>
-      <p className={
+    <div className={styles.messageContainer}>
+      <div className={
         message.type ==='practice' ?
-        styles.practiceMessage :
-        styles.patientMessage
+        styles.practiceContainer :
+        styles.patientContainer
       }>
-        { message.text }
-      </p>
+        <p className={
+          message.type ==='practice' ?
+          styles.practiceMessage :
+          styles.patientMessage
+        }>
+          { message.text }
+        </p>
+      </div>
     </div>
   )
 }

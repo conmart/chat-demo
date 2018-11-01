@@ -1,35 +1,33 @@
-.practiceContainer{
+.messageContainer {
   display: block;
   margin: .25rem;
-  text-align: right;
 }
-.practiceMessage {
-  color: white;
-  background: #007bff;
-  display: inline-block;
-  padding: .45rem 1rem;
-  border-radius: 23px;
-  margin: 0;
-  text-align: left;
-  max-width: 415px;
+
+.practiceContainer{
+  text-align: right;
 }
 
 .patientContainer{
-  display: block;
-  margin: .25rem;
   text-align: left;
 }
-.patientMessage {
-  color: black;
-  background: #dee1e2;
+
+.messageContainer p {
   display: inline-block;
   padding: .45rem 1rem;
   border-radius: 23px;
   margin: 0;
-  text-align: left;
-  max-width: 415px;
+  max-width: 70%;
+  font-weight: 300;
 }
 
-.test {
-  font-size: 24px;
+.practiceMessage {
+  color: white;
+  background: #007bff;
+  text-align: left;
+}
+
+.patientMessage {
+  color: black;
+  background: #dee1e2;
+  text-align: left;
 }
