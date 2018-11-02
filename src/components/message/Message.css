@@ -1,4 +1,4 @@
-.messageContainer {
+.container {
   display: block;
   margin: .25rem;
 }
@@ -11,7 +11,7 @@
   text-align: left;
 }
 
-.messageContainer p {
+.message {
   display: inline-block;
   padding: .45rem 1rem;
   border-radius: 23px;

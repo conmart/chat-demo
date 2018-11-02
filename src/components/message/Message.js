@@ -1,24 +1,26 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 
-import styles from './Message.css'
+import styles from './Message.css';
+
+const cx = classNames.bind(styles);
 
 const Message = ({message}) => {
 
+  const isPractice = message.type === 'practice'
+  const containerStyles = cx('container',
+    {practiceContainer: isPractice,
+      patientContainer: !isPractice})
+
+  const contentStyles = cx('message',
+     {practiceMessage: isPractice,
+       patientMessage: !isPractice})
+
   return (
-    <div className={styles.messageContainer}>
-      <div className={
-        message.type ==='practice' ?
-        styles.practiceContainer :
-        styles.patientContainer
-      }>
-        <p className={
-          message.type ==='practice' ?
-          styles.practiceMessage :
-          styles.patientMessage
-        }>
-          { message.text }
-        </p>
-      </div>
+    <div className={containerStyles}>
+      <p className={contentStyles}>
+        { message.text }
+      </p>
     </div>
   )
 }

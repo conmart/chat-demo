@@ -1,4 +1,13 @@
 .chatWindow {
-  overflow: auto;
+  overflow: hidden;
   height: 100%;
+  position: relative;
+}
+
+.inner {
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  min-height: 100%;
+  width: 100%;
 }
