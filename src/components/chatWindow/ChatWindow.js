@@ -15,12 +15,14 @@ const ChatWindow = ({messages}) => {
 
   return (
     <div className={styles.chatWindow}>
-      <CSSTransitionGroup
-        transitionName="message"
-        transitionEnterTimeout={500}
-        transitionLeaveTimeout={300}>
-        {convo}
-      </CSSTransitionGroup>
+      <div className={styles.inner}>
+        <CSSTransitionGroup
+          transitionName="message"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
+          {convo}
+        </CSSTransitionGroup>
+      </div>
     </div>
   )
 }
